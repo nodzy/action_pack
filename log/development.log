@@ -1,0 +1,1815 @@
+  [1m[36m (74.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (63.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTodoItems (20151202180708)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" varchar, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151202180708"]]
+  [1m[35m (83.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTodoItems (20151202181332)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+SQLite3::SQLException: table "todo_items" already exists: CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (82.0ms)[0m  [1mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" varchar, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (101.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (77.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (1.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (75.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151202180708')
+  [1m[36m (76.0ms)[0m  [1mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" varchar, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (130.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (174.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (1.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (85.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151202180708')
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTodoItems (20151202181332)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+SQLite3::SQLException: table "todo_items" already exists: CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (124.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (64.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTodoItems (20151202181332)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151202181332"]]
+  [1m[35m (61.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:20:49 +0100
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.3) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.3) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (195.0ms)
+  [1m[36m (83.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (97.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTodoItems (20151202181332)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "todo_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "due_date" date, "title" varchar, "description" text, "completed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151202181332"]]
+  [1m[35m (71.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:21:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5973ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (TypeError: Obiekt nie obsługuje tej właściwości lub metody.):
+    3: <head>
+    4:   <title>Todolists</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__784891722_48117900'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (69.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (152.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:24:21 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 4706ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (TypeError: Obiekt nie obsługuje tej właściwości lub metody.):
+    3: <head>
+    4:   <title>Todolists</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__784891722_48117900'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (169.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:30:22 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 5051ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (TypeError: Obiekt nie obsługuje tej właściwości lub metody.):
+    3: <head>
+    4:   <title>Todolists</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__784891722_48117900'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (80.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (164.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:36:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 5410ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (TypeError: Obiekt nie obsługuje tej właściwości lub metody.):
+    3: <head>
+    4:   <title>Todolists</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___242526718_53660364'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (66.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (155.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2015-12-02 19:36:30 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4743ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (TypeError: Obiekt nie obsługuje tej właściwości lub metody.):
+    3: <head>
+    4:   <title>Todolists</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___242526718_53660364'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (146.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 07:48:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 992ms (Views: 972.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-9e7c73c13bf2f53ca8bf71dc383a5f6d30700357ece89de7870b2ee60f2405d6.css?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/todo_items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/todo_items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-03 07:48:36 +0100
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 07:48:39 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (64.8ms)
+  Rendered todo_items/new.html.erb within layouts/application (88.1ms)
+Completed 200 OK in 161ms (Views: 148.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/todo_items" for 127.0.0.1 at 2015-12-03 07:49:17 +0100
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hArNx5LGTJjTcANq85SgOvm7lde2VXURxb3RBAIg921tXXjs+Go+TS2c31XcuEXeEnCu3nLHS6MMj5MMiZGC2g==", "todo_item"=>{"due_date(1i)"=>"2015", "due_date(2i)"=>"12", "due_date(3i)"=>"10", "title"=>"Opis", "description"=>"Opis", "completed"=>"1"}, "commit"=>"Create Todo item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "todo_items" ("title", "description", "completed", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Opis"], ["description", "Opis"], ["completed", "t"], ["due_date", "2015-12-10"], ["created_at", "2015-12-03 06:49:17.372492"], ["updated_at", "2015-12-03 06:49:17.372492"]]
+  [1m[36m (126.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/todo_items/1
+Completed 302 Found in 171ms (ActiveRecord: 126.6ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2015-12-03 07:49:17 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 69ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 07:56:07 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 07:56:09 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (5.8ms)
+  Rendered todo_items/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todo_items" for 127.0.0.1 at 2015-12-03 07:56:16 +0100
+Processing by TodoItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kj0NSEas1WKVUvRw6SS6wznaJJR+K1QoTCmsdgsOL4J7arhjLACnt2u+KE/GCF8n0hEfnbq5apqFG+5+gL9aNQ==", "todo_item"=>{"due_date(1i)"=>"2015", "due_date(2i)"=>"12", "due_date(3i)"=>"3", "title"=>"g", "description"=>"g", "completed"=>"1"}, "commit"=>"Create Todo item"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_items" ("title", "description", "completed", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "g"], ["description", "g"], ["completed", "t"], ["due_date", "2015-12-03"], ["created_at", "2015-12-03 06:56:16.395021"], ["updated_at", "2015-12-03 06:56:16.395021"]]
+  [1m[35m (188.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/todo_items
+Completed 302 Found in 196ms (ActiveRecord: 189.2ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 07:56:16 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 07:56:43 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2015-12-03 07:56:46 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 08:00:08 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 08:00:14 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (4.9ms)
+  Rendered todo_items/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 08:00:17 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 08:00:34 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (9.8ms)
+  Rendered todo_items/edit.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 08:00:39 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2015-12-03 08:00:40 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2015-12-03 08:00:43 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/ads" for 127.0.0.1 at 2015-12-03 08:52:46 +0100
+
+ActionController::RoutingError (No route matches [GET] "/ads"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/malena/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/malena/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/malena/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (394.0ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (435.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (20.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (52.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:26:19 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (8.8ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 149ms (Views: 139.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:26:25 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (1.4ms)
+  Rendered todo_items/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/malena/ass3/todolists/app/views/todo_items/_form.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/malena/ass3/todolists/app/views/todo_items/_form.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/todo_items/_form.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/todo_items/_form.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/todo_items/new.html.erb:3:in `_app_views_todo_items_new_html_erb__2662837376631172729_70101981497280'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.4ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:26:25 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (1.2ms)
+  Rendered todo_items/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/malena/ass3/todolists/app/views/todo_items/_form.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/malena/ass3/todolists/app/views/todo_items/_form.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/todo_items/_form.html.erb:37: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/todo_items/_form.html.erb:39: syntax error, unexpected end-of-input, expecting keyword_end
+  app/views/todo_items/new.html.erb:3:in `_app_views_todo_items_new_html_erb__2662837376631172729_70101770582020'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.1ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:27:01 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (4.7ms)
+  Rendered todo_items/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:27:08 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items/1" for 127.0.0.1 at 2015-12-03 09:27:10 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:27:13 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:27:46 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (3.8ms)
+  Rendered todo_items/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:28:06 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (6.6ms)
+  Rendered todo_items/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:29:01 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:29:03 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (5.1ms)
+  Rendered todo_items/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:29:36 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (5.6ms)
+  Rendered todo_items/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:29:39 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (3.8ms)
+  Rendered todo_items/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:29:56 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (7.4ms)
+  Rendered todo_items/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:29:59 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:30:05 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (4.8ms)
+  Rendered todo_items/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:31:04 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (7.2ms)
+  Rendered todo_items/edit.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `exists?' for #<TodoItem:0x007f83adfbe220>):
+    24:     <%= f.label :description %><br>
+    25:     <%= f.text_area :description %>
+    26:   </div>
+    27:   <% if @todo_item.exists? %>
+    28:   <div class="field">
+    29:     <%= f.label :completed %><br>
+    30:     <%= f.check_box :completed %>
+  app/views/todo_items/_form.html.erb:27:in `block in _app_views_todo_items__form_html_erb__2899650900314259472_70101768177700'
+  app/views/todo_items/_form.html.erb:1:in `_app_views_todo_items__form_html_erb__2899650900314259472_70101768177700'
+  app/views/todo_items/edit.html.erb:3:in `_app_views_todo_items_edit_html_erb___1734776942672075016_70101770665180'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.9ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:32:06 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (5.8ms)
+  Rendered todo_items/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/todo_items" for 127.0.0.1 at 2015-12-03 09:32:14 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:32:16 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (4.2ms)
+  Rendered todo_items/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for 127.0.0.1 at 2015-12-03 09:35:49 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (5.4ms)
+  Rendered todo_items/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/1/edit" for 127.0.0.1 at 2015-12-03 09:35:56 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.1ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (4.8ms)
+  Rendered todo_items/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:43:05 +0100
+Processing by TodoItemsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/malena/ass3/todolists/app/models/todo_item.rb:8: class/module name must be CONSTANT
+Implement a class method in the TodoItem model that retu...
+                           ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:8: syntax error, unexpected keyword_in, expecting '<' or ';' or '\n'
+Implement a class method in the TodoItem model that retu...
+                           ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...reference by the view -- to the member variable defined in t...
+...                               ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:10: syntax error, unexpected keyword_in, expecting keyword_end
+... the member variable defined in the controller class. The gr...
+...                               ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:10: syntax error, unexpected '.'
+...efined in the controller class. The grader is looking for th...
+...                               ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...rader is looking for the result to be expressed as Number of...
+...                               ^
+/home/malena/ass3/todolists/app/models/todo_item.rb:11: `$ ' is not allowed as a global variable name
+/home/malena/ass3/todolists/app/models/todo_item.rb:11: syntax error, unexpected end-of-input
+$ rspec -e rq09
+ ^):
+  app/models/todo_item.rb:8: class/module name must be CONSTANT
+  app/models/todo_item.rb:8: syntax error, unexpected keyword_in, expecting '<' or ';' or '\n'
+  app/models/todo_item.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/models/todo_item.rb:10: syntax error, unexpected keyword_in, expecting keyword_end
+  app/models/todo_item.rb:10: syntax error, unexpected '.'
+  app/models/todo_item.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/models/todo_item.rb:11: `$ ' is not allowed as a global variable name
+  app/models/todo_item.rb:11: syntax error, unexpected end-of-input
+  app/controllers/todo_items_controller.rb:7:in `index'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.0ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:46:04 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `count' for #<TodoItem:0x007f83ad836110>):
+    25:       </tr>
+    26:     <% end %>
+    27: 	
+    28: 	     <td><%=  @number_of_completed_todos.count %></td>
+    29:   </tbody>
+    30: </table>
+    31: 
+  app/views/todo_items/index.html.erb:28:in `_app_views_todo_items_index_html_erb__3743295293714143839_70101764220140'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.1ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:46:25 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:48:26 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:48:52 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `number_of_completed_todos' for #<#<Class:0x007f83ad835148>:0x007f83ae1cd638>):
+    22:         <td><%= todo_item.completed %></td>
+    23:         <td><%= link_to 'Show', todo_item %></td>
+    24:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    25: 		<td><%=  number_of_completed_todos %></td>
+    26:       </tr>
+    27:     <% end %>
+    28: 	
+  app/views/todo_items/index.html.erb:25:in `block in _app_views_todo_items_index_html_erb__3743295293714143839_70101769282040'
+  app/views/todo_items/index.html.erb:17:in `_app_views_todo_items_index_html_erb__3743295293714143839_70101769282040'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.8ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:49:49 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.3ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 35.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:50:06 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.1ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."completed" = ? LIMIT 1  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `liczba' for #<#<Class:0x007f83ae014da0>:0x007f83ae819b90>):
+    22:         <td><%= todo_item.completed %></td>
+    23:         <td><%= link_to 'Show', todo_item %></td>
+    24:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    25: 		<td><%=  liczba %></td>
+    26:       </tr>
+    27:     <% end %>
+    28: 	
+  app/views/todo_items/index.html.erb:25:in `block in _app_views_todo_items_index_html_erb__3743295293714143839_70101772584080'
+  app/views/todo_items/index.html.erb:17:in `_app_views_todo_items_index_html_erb__3743295293714143839_70101772584080'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.3ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:52:08 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find TodoItem with 'id'=):
+  app/controllers/todo_items_controller.rb:8:in `index'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.3ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:52:42 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.4ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 45ms (Views: 41.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:53:00 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_items"
+  [1m[36mTodoItem Load (0.2ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:53:21 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (0.4ms)[0m  SELECT  "todo_items".* FROM "todo_items" LIMIT 1
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `count' for #<TodoItem:0x007f83c765f520>):
+  app/controllers/todo_items_controller.rb:8:in `index'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.4ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:53:49 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:54:31 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_items"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `where' for 2:Fixnum):
+  app/controllers/todo_items_controller.rb:8:in `index'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.0ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.1ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:55:31 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  Rendered todo_items/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/home/malena/ass3/todolists/app/views/todo_items/index.html.erb:28: syntax error, unexpected ',', expecting ')'
+...pend=(  "Liczba ukonczonych: ", @number_of_completed_todos )...
+...                               ^):
+  app/views/todo_items/index.html.erb:28: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/malena/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.6ms)
+
+
+Started GET "/todo_items/" for 127.0.0.1 at 2015-12-03 09:56:33 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.2ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:17 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 72ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:20 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:26 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:31 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:34 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:38 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:43 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:48 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:53 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:42:59 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:43:07 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:43:11 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:43:19 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:43:24 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-06 11:43:34 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_lists" for ::1 at 2016-02-06 11:44:13 +0100
+
+ActionController::RoutingError (No route matches [GET] "/todo_lists"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (39.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (165.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (97.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (206.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:44:21 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 943ms (Views: 902.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/scaffolds.self-6e21533b5ee34176ffb391edaf2b8672944cf2c1f87e283742e54191f182544e.css?body=1" for ::1 at 2016-02-06 11:44:23 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:48:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 8715ms (Views: 8646.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/scaffolds.self-bad8af4dffc0e5dd0189129404fb5ef8b68333e5087d4fbe5b3fe98c19775c0e.css?body=1" for ::1 at 2016-02-06 11:48:38 +0100
+
+
+Started GET "/assets/custom.self-a9ed350c6726ed18fd5372df33bc0d70d813e1e7eadc2d2c12adc401abbbf516.css?body=1" for ::1 at 2016-02-06 11:48:38 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:50:59 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (141.0ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `list_name' for #<TodoItem:0xa92bad8>):
+    19:   <tbody>
+    20:     <% @todo_items.each do |todo_item| %>
+    21:       <tr>
+    22:         <td><%= todo_item.list_name %></td>
+    23:         <td><%= todo_item.list_due_date %></td>
+    24:         <td><%= link_to 'Show', todo_item %></td>
+    25:         <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+  app/views/todo_items/index.html.erb:22:in `block in _app_views_todo_items_index_html_erb__615539999_88640700'
+  app/views/todo_items/index.html.erb:20:in `_app_views_todo_items_index_html_erb__615539999_88640700'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (212.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:51:43 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 147ms (Views: 144.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:53:04 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+SyntaxError (C:/Users/magda/Desktop/github/todolists_v3/app/views/todo_items/index.html.erb:44: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/todo_items/index.html.erb:44: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (202.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:53:58 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 150ms (Views: 147.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:57:47 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 164ms (Views: 158.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:58:37 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 135ms (Views: 132.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:59:07 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 211ms (Views: 204.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 11:59:29 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 190ms (Views: 187.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-06 11:59:56 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 175ms (Views: 165.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-06 12:01:00 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 151ms (Views: 149.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1/edit" for ::1 at 2016-02-06 12:01:04 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (123.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (171.0ms)
+Completed 200 OK in 320ms (Views: 317.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:01:08 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 154ms (Views: 151.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for ::1 at 2016-02-06 12:01:12 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (4.0ms)
+  Rendered todo_items/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 138ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:01:15 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 136ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:01:49 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3847ms (Views: 3845.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-519c3cd8eadd21fa1cea80d0dc9286581ad8b87d4e18e9b69e0eb41f628f3a2d.css?body=1" for ::1 at 2016-02-06 12:01:53 +0100
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-06 12:02:04 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 123ms (Views: 121.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:02:07 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 152ms (Views: 148.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1/edit" for ::1 at 2016-02-06 12:02:09 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (7.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 150ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:02:13 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 197ms (Views: 193.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:02:44 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3619ms (Views: 3616.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-ddede5a3bf8555df3c7df8a45d523ee4ba1cee5b060a0b2d68b0178fa354927a.css?body=1" for ::1 at 2016-02-06 12:02:48 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:03:23 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 3789ms (Views: 3785.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/custom.self-de5099ca558c10aeb8a35e8442b0b84653dae77254b9f18ef245052480122999.css?body=1" for ::1 at 2016-02-06 12:03:27 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:04:22 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3877ms (Views: 3873.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-8f1654aafd339aa2461ca97ecc2b11243407b53549b9ae30b923b2bef8bca6ae.css?body=1" for ::1 at 2016-02-06 12:04:26 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:04:56 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 149ms (Views: 146.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:05:20 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 142ms (Views: 139.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:05:37 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 145ms (Views: 142.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:06:22 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 3855ms (Views: 3853.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-332b6a6654fa99f5968da1630bce88f3c2cfbf2af4f18c0d7e59bbc653aacc60.css?body=1" for ::1 at 2016-02-06 12:06:26 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:06:37 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4030ms (Views: 4027.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-1e338417f47ef5f3042a5a7024f46a39509ffe960bc4436e1f3b6c7d679f543c.css?body=1" for ::1 at 2016-02-06 12:06:41 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:06:51 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3919ms (Views: 3915.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-b1734a3472e761c779ff52402d68c54bbf5e6d9bb0c28932c4ed95f0a8f7c03c.css?body=1" for ::1 at 2016-02-06 12:06:55 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:07:02 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3830ms (Views: 3827.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-61c182626717037c1aa62ce8ad109055947c9cc809a287af41d1095561e87033.css?body=1" for ::1 at 2016-02-06 12:07:06 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:07:19 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3738ms (Views: 3734.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-d676f4904cf1ee34c05bb4a0cc22b7ba3d55b20d637610ce02acffc92d70fecf.css?body=1" for ::1 at 2016-02-06 12:07:23 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:07:55 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 1471ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (Undefined variable: "$green".):
+    2: <html>
+    3: <head>
+    4:   <title>Todoitems</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/custom.css.scss:55
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___964225507_88638204'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (106.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (214.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:08:52 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 4117ms (Views: 4114.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-2c527f873de8cc9d4b2bda515b28e4e85fb957939476d6e6b754a46eaabe5b87.css?body=1" for ::1 at 2016-02-06 12:08:56 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:09:33 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3896ms (Views: 3888.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-9d4339b28d89c88bc2e329f5752735ce4090d19bb117fd4e8bcc8aacce0d5176.css?body=1" for ::1 at 2016-02-06 12:09:37 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:09:51 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3926ms (Views: 3923.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-5c57ff000f7e4561a443d83f5cb7017121f862cf1fa2f4792bf715f40127f45a.css?body=1" for ::1 at 2016-02-06 12:09:55 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:10:20 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3793ms (Views: 3789.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-a62a4c7e3069b76e689c045f579d560e9084d6cbbea2cbfddd86b93b47a6e012.css?body=1" for ::1 at 2016-02-06 12:10:24 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:11:44 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3951ms (Views: 3948.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-d913929d33f98bb57876aa14cb512cccf7060f1491ff57ba1336038ee9a4f944.css?body=1" for ::1 at 2016-02-06 12:11:48 +0100
+
+
+Started GET "/todo_items/1" for ::1 at 2016-02-06 12:12:04 +0100
+Processing by TodoItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 131ms (Views: 129.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1/edit" for ::1 at 2016-02-06 12:12:07 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered todo_items/_form.html.erb (5.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 146ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:12:11 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 149ms (Views: 145.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:15:20 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3775ms (Views: 3773.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-edf5688b128630a9158b4bab6799353c19f9d83a7ef0d12aefd4d37049716da6.css?body=1" for ::1 at 2016-02-06 12:15:24 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:15:45 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3759ms (Views: 3757.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-68476708b4120cd3f2f3544cf4005c2c99bbf7507141981da2cfd631007d8f04.css?body=1" for ::1 at 2016-02-06 12:15:49 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:16:33 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 3989ms (Views: 3987.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-2a736ef46c1aab0e306b6361cc2e2bcef62115b9ba6d0698bd2b4a8d9a23c089.css?body=1" for ::1 at 2016-02-06 12:16:37 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:16:57 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3699ms (Views: 3697.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-219c8986d64e6690c900e7276bf766207a03177db0c9d3213b7837c37b3048a1.css?body=1" for ::1 at 2016-02-06 12:17:01 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:17:21 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3933ms (Views: 3929.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:17:46 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3876ms (Views: 3873.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-6188c98f1ec678623fedc8901b8a143203d9a99b7ca59926c57ab78015d5dd4a.css?body=1" for ::1 at 2016-02-06 12:17:50 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:18:00 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3749ms (Views: 3745.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:18:26 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3893ms (Views: 3890.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-3cddd7a38eab4e35de7a63ca63c309ce428e23764530570d96038f8fd75c2c48.css?body=1" for ::1 at 2016-02-06 12:18:30 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:18:54 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 4335ms (Views: 4332.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-696e87710bb0be12fe4fff0d026dd69e0da8fadf86f1f54c559552bdf97c80e1.css?body=1" for ::1 at 2016-02-06 12:18:58 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:19:21 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3751ms (Views: 3746.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-85a08bf36f73e74afb371ad088438e264902cddf0b2e0c3daf599ae7fa2decf6.css?body=1" for ::1 at 2016-02-06 12:19:25 +0100
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 12:19:46 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3889ms (Views: 3885.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.self-19b63497962a7db460841700d0bf81b57474850b0675cf606d6d8f0ce342ba47.css?body=1" for ::1 at 2016-02-06 12:19:50 +0100
+
+
+Started GET "/" for ::1 at 2016-02-06 15:17:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (17.0ms)
+Completed 200 OK in 116ms (Views: 92.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:18:06 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 1232ms (Views: 1193.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:18:36 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 146ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items/new" for ::1 at 2016-02-06 15:19:55 +0100
+Processing by TodoItemsController#new as HTML
+  Rendered todo_items/_form.html.erb (89.0ms)
+  Rendered todo_items/new.html.erb within layouts/application (151.0ms)
+Completed 200 OK in 281ms (Views: 280.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:19:59 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 120ms (Views: 117.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:20:44 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 125ms (Views: 122.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:20:48 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (0.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 120ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:21:10 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"todo_items", :id=>nil} missing required keys: [:id]):
+    27:         <td><%= todo_item.description %></td>
+    28:         <td><%= todo_item.completed %></td>
+    29:         <td><%= link_to 'Show', todo_item %></td>
+    30: 		<td><%= link_to 'Edit', edit_todo_item_path(@todo_item) %></td>
+    31:         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    32: 		
+    33:       </tr>
+  app/views/todo_items/index.html.erb:30:in `block in _app_views_todo_items_index_html_erb___110290489_81848640'
+  app/views/todo_items/index.html.erb:23:in `_app_views_todo_items_index_html_erb___110290489_81848640'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (157.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:21:41 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?  [["completed", "t"]]
+  [1m[36mTodoItem Load (1.0ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 140ms (Views: 136.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items/1/edit" for ::1 at 2016-02-06 15:21:44 +0100
+Processing by TodoItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTodoItem Load (1.0ms)[0m  SELECT  "todo_items".* FROM "todo_items" WHERE "todo_items"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered todo_items/_form.html.erb (20.0ms)
+  Rendered todo_items/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 150ms (Views: 138.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/todo_items" for ::1 at 2016-02-06 15:21:56 +0100
+Processing by TodoItemsController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "todo_items" WHERE "todo_items"."completed" = ?[0m  [["completed", "t"]]
+  [1m[35mTodoItem Load (0.0ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 126ms (Views: 122.0ms | ActiveRecord: 1.0ms)
